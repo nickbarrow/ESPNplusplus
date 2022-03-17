@@ -1,0 +1,148 @@
+* { box-sizing: border-box; }
+
+body { padding: 0; margin: 0; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  opacity: 0.8;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 24px 0;
+
+  &:first-of-type { opacity: 0.25; }
+  &:nth-of-type(2) {
+    width: calc(100% + 48px);
+    margin-left: -24px;
+  }
+}
+
+.App {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.r {
+  text-align: right;
+}
+
+.matchup-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-choice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 24px;
+  // background-color: rgba(238, 238, 238, 0.75);
+  // border-radius: 15px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(50% - 12px);
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    h2 {
+      background-color: rgb(224, 224, 224);
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+      border: 1px solid #cecece;
+      // border-radius: 10px;
+      padding: 10px 0;
+      margin-bottom: 24px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .react-select-container {
+      width: 100%;
+      
+      div {
+        cursor: pointer;
+      }
+    }
+  }
+
+  button {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 24px auto 0;
+    width: 80%;
+    background-color: #CC0100;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    color: white;
+    cursor: pointer;
+    transition: .25s;
+
+    &:hover {
+      background-color: #B00000;
+    }
+  }
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+
+  .team-names {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .weights {
+    display: flex;
+    flex-direction: column;
+
+    .weight {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px;
+
+      .g {
+        // color: rgb(23, 177, 23);
+        color: rgb(255, 145, 0);
+        font-weight: 700;
+      }
+    }
+  }
+}
