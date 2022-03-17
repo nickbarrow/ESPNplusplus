@@ -40,7 +40,11 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1 style={{ margin: '0 0 24px', textAlign: 'center' }}>Matchup Generator</h1>
+      <h1 style={{ textAlign: 'center' }}>
+        ESPN++</h1>
+
+      <h2 style={{ margin: '0 0 24px', textAlign: 'center' }}>
+        Matchup Generator</h2>
 
       <div className="matchup-input">
         <div className="team-choice">
