@@ -4,7 +4,7 @@ body { padding: 0; margin: 0; }
 
 h1, h2, h3 {
   margin: 0;
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-family: 'Aldrich', Helvetica, Arial, sans-serif;
   opacity: 0.8;
 }
 
@@ -37,11 +37,67 @@ hr {
 
 .App {
   font-family: sans-serif;
-  max-width: 600px;
+  max-width: 640px;
   margin: 0 auto;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
   min-height: 100vh;
-  padding: 24px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+
+  @media (max-width: 640px) { border: none; }
+}
+
+.header {
+  background-color: rgb(0, 0, 0);
+  height: 70px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .logo-bg {
+    background-color: #CC0100;
+    padding: 0 10px 0 0;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+    width: fit-content;
+    margin: 0 15px 0 0;
+    
+    .logo {
+      background-color: red;
+      height: 100%;
+      width: fit-content;
+      padding: 18px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+  
+      svg {
+        height: 100%;
+        width: auto;
+    
+        path {
+          fill: white;
+        }
+      }
+  
+      span { margin: 0 10px; }
+    }
+  }
+
+
+
+  span {
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    // font-style: italic;
+  }
+
+  h2 {
+    text-align: center;
+    color: white;
+  }
 }
 
 .r {
@@ -56,32 +112,22 @@ hr {
 
 .team-choice {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  margin: 24px;
   padding: 24px;
-  // background-color: rgba(238, 238, 238, 0.75);
-  // border-radius: 15px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
 
   .team {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(50% - 12px);
-
-    @media (max-width: 768px) {
-      width: 100%;
-    }
+    width: 100%;
 
     h2 {
       background-color: rgb(224, 224, 224);
       box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
       border: 1px solid #cecece;
-      // border-radius: 10px;
       padding: 10px 0;
       margin-bottom: 24px;
       width: 100%;
@@ -100,7 +146,7 @@ hr {
   button {
     border: none;
     padding: 10px 0;
-    font-size: 16px;
+    font: 16px 'Aldrich', sans-serif;
     font-weight: 600;
     margin: 24px auto 0;
     width: 100%;
@@ -110,9 +156,7 @@ hr {
     cursor: pointer;
     transition: .25s;
 
-    &:hover {
-      background-color: #B00000;
-    }
+    &:hover { background-color: #B00000; }
   }
 }
 
@@ -139,10 +183,21 @@ hr {
       padding: 10px;
 
       .g {
-        // color: rgb(23, 177, 23);
         color: rgb(255, 145, 0);
         font-weight: 700;
       }
     }
+  }
+}
+
+.credits {
+  width: 100%;
+  text-align: center;
+  
+  a {
+    opacity: 0.85;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px 0;
   }
 }
